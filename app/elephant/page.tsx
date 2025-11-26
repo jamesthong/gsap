@@ -13,8 +13,8 @@ export default function ElephantPage() {
   useGSAP(() => {
     if (!containerRef.current) return;
 
-    // Animate house drawing
-    const paths = document.querySelectorAll('.house-path') as NodeListOf<SVGPathElement>;
+    // Animate elephant drawing
+    const paths = document.querySelectorAll('.elephant-path') as NodeListOf<SVGPathElement>;
 
     paths.forEach((path, index) => {
       const pathLength = path.getTotalLength();
@@ -30,7 +30,7 @@ export default function ElephantPage() {
         ease: "power2.out",
         delay: index * 0.2,
         scrollTrigger: {
-          trigger: '.house-container',
+          trigger: '.elephant-container',
           start: "center center",
           end: "80% 20%",
           scrub: true,
@@ -46,9 +46,9 @@ export default function ElephantPage() {
 
   return (
     <div ref={containerRef} className="min-h-screen bg-gray-900 flex items-center justify-center p-8">
-      <div className="house-container max-w-4xl w-full">
+      <div className="elephant-container max-w-4xl w-full">
         <h1 className="text-4xl md:text-6xl font-bold text-white text-center mb-12">
-          Drawing House
+          Drawing Elephant
         </h1>
 
         <div className="flex justify-center">
@@ -57,135 +57,169 @@ export default function ElephantPage() {
             className="w-full max-w-2xl h-auto"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* House base */}
-            <path
-              className="house-path"
-              d="M300 400 L500 400 L500 550 L300 550 Z"
+            {/* Elephant body */}
+            <ellipse
+              className="elephant-path"
+              cx="400"
+              cy="450"
+              rx="120"
+              ry="80"
               fill="none"
               stroke="#8b5cf6"
               strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
             />
 
-            {/* House roof */}
-            <path
-              className="house-path"
-              d="M300 400 L400 300 L500 400"
-              fill="none"
-              stroke="#8b5cf6"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-
-            {/* House door */}
-            <path
-              className="house-path"
-              d="M380 550 L380 480 L420 480 L420 550"
-              fill="none"
-              stroke="#8b5cf6"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-
-            {/* House windows */}
-            <path
-              className="house-path"
-              d="M320 450 L360 450 L360 490 L320 490 Z"
-              fill="none"
-              stroke="#8b5cf6"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-
-            <path
-              className="house-path"
-              d="M440 450 L480 450 L480 490 L440 490 Z"
-              fill="none"
-              stroke="#8b5cf6"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-
-            {/* House chimney */}
-            <path
-              className="house-path"
-              d="M450 320 L450 280 L470 280 L470 320"
-              fill="none"
-              stroke="#8b5cf6"
-              strokeWidth="4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-
-            {/* House door knob */}
+            {/* Elephant head */}
             <circle
-              className="house-path"
-              cx="410"
-              cy="515"
-              r="3"
+              className="elephant-path"
+              cx="400"
+              cy="320"
+              r="60"
               fill="none"
               stroke="#8b5cf6"
-              strokeWidth="2"
+              strokeWidth="4"
             />
 
-            {/* House window cross */}
+            {/* Elephant trunk */}
             <path
-              className="house-path"
-              d="M340 470 L340 470 L340 470 L340 470"
+              className="elephant-path"
+              d="M400 380 Q380 420 360 480 Q350 500 340 520"
               fill="none"
               stroke="#8b5cf6"
-              strokeWidth="2"
+              strokeWidth="4"
               strokeLinecap="round"
             />
 
-            <path
-              className="house-path"
-              d="M340 470 L360 470"
+            {/* Elephant ears */}
+            <ellipse
+              className="elephant-path"
+              cx="340"
+              cy="320"
+              rx="25"
+              ry="40"
               fill="none"
               stroke="#8b5cf6"
-              strokeWidth="2"
+              strokeWidth="4"
+            />
+
+            <ellipse
+              className="elephant-path"
+              cx="460"
+              cy="320"
+              rx="25"
+              ry="40"
+              fill="none"
+              stroke="#8b5cf6"
+              strokeWidth="4"
+            />
+
+            {/* Elephant legs */}
+            <line
+              className="elephant-path"
+              x1="340"
+              y1="530"
+              x2="340"
+              y2="580"
+              stroke="#8b5cf6"
+              strokeWidth="4"
               strokeLinecap="round"
             />
 
-            <path
-              className="house-path"
-              d="M350 460 L350 480"
-              fill="none"
+            <line
+              className="elephant-path"
+              x1="380"
+              y1="530"
+              x2="380"
+              y2="580"
               stroke="#8b5cf6"
-              strokeWidth="2"
+              strokeWidth="4"
               strokeLinecap="round"
             />
 
-            <path
-              className="house-path"
-              d="M460 470 L480 470"
-              fill="none"
+            <line
+              className="elephant-path"
+              x1="420"
+              y1="530"
+              x2="420"
+              y2="580"
               stroke="#8b5cf6"
-              strokeWidth="2"
+              strokeWidth="4"
               strokeLinecap="round"
             />
 
-            <path
-              className="house-path"
-              d="M470 460 L470 480"
+            <line
+              className="elephant-path"
+              x1="460"
+              y1="530"
+              x2="460"
+              y2="580"
+              stroke="#8b5cf6"
+              strokeWidth="4"
+              strokeLinecap="round"
+            />
+
+            {/* Elephant tusks */}
+            <line
+              className="elephant-path"
+              x1="385"
+              y1="365"
+              x2="375"
+              y2="385"
+              stroke="#8b5cf6"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+
+            <line
+              className="elephant-path"
+              x1="415"
+              y1="365"
+              x2="425"
+              y2="385"
+              stroke="#8b5cf6"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+
+            {/* Elephant eyes */}
+            <circle
+              className="elephant-path"
+              cx="385"
+              cy="305"
+              r="5"
               fill="none"
               stroke="#8b5cf6"
               strokeWidth="2"
+            />
+
+            <circle
+              className="elephant-path"
+              cx="415"
+              cy="305"
+              r="5"
+              fill="none"
+              stroke="#8b5cf6"
+              strokeWidth="2"
+            />
+
+            {/* Elephant tail */}
+            <path
+              className="elephant-path"
+              d="M520 450 Q540 440 550 430"
+              fill="none"
+              stroke="#8b5cf6"
+              strokeWidth="3"
               strokeLinecap="round"
             />
           </svg>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-20 mb-40">
           <p className="text-gray-300 text-lg">
-            Scroll to see the house being drawn!
+            Scroll to see the elephant being drawn!
           </p>
         </div>
+        
       </div>
     </div>
   );

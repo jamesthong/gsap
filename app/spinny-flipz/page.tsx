@@ -7,7 +7,7 @@ import { Flip } from 'gsap/Flip';
 
 gsap.registerPlugin(ScrollTrigger, Flip);
 
-import '@fontsource/nunito';
+// import '@fontsource/nunito';
 
 const images = [
   'https://assets.codepen.io/756881/amys-1.jpg',
@@ -157,7 +157,7 @@ const SpinnyFlipz = () => {
   }, []);
 
   return (
-    <div className="min-h-[100vh] w-full bg-[#e34f37] text-white font-['Nunito']">
+    <div className="min-h-[100vh] w-full bg-[#e34f37] text-white font-['Nunito'] mb-20">
       <div ref={headerRef} className="top-0 left-0 w-full  flex items-center justify-center cursor-pointer">
         {/* Header content can be added here if needed */}
       </div>
